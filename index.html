@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TXTFORMATER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-500">
+    <div class="bg-green-500 rounded-md h-96 w-96 flex flex-col  items-center mt-36 ml-96">
+        <div class="gap-4 mb-32 mt-8">
+            <input id="text" class="rounded-md pl-3 h-10" type="text" placeholder="Input your text here...">
+            <button id="btn" class="bg-blue-500 hover:bg-blue-700 h-10 rounded-md w-24 text-white">Fomart</button>
+            <div>
+                <p id="result"></p>     
+            </div>
+        </div>
+        
+    </div>
+    
+    
+    <script>
+        let btn = document.getElementById("btn")
+        let result = document.getElementById("result")
+
+
+        btn.addEventListener("click", () => {
+            let text = document.getElementById("text").value;
+            let content = document.createElement("p")
+                content.className = "font-bold text-2xl"
+                content.innerHTML = `${text}`
+
+            result.appendChild(content)
+
+            let items = document.createElement("p")
+                items.className = "uppercase text-2xl"
+                items.innerHTML = `${text}`
+
+            result.appendChild(items)
+
+            let next = document.createElement("p")
+               next.className = "bg-red-500 text-2xl"
+               next.innerHTML = `${text}`
+
+            result.appendChild(next)
+        })
+    </script>
+</body>
+</html>
